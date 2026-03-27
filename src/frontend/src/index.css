@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.875rem;
+
+    /* Brand blue #0A56B5 */
+    --brand-blue: 0.39 0.18 259;
+    /* Brand teal #1EBE8B */
+    --brand-teal: 0.69 0.16 164;
+    /* Brand orange #F47A1F */
+    --brand-orange: 0.67 0.18 51;
+    /* Secondary blue #1E63C6 */
+    --brand-blue-secondary: 0.46 0.17 258;
+
+    --background: 1 0 0;
+    --foreground: 0.14 0.01 260;
+    --card: 1 0 0;
+    --card-foreground: 0.14 0.01 260;
+    --popover: 1 0 0;
+    --popover-foreground: 0.14 0.01 260;
+    --primary: 0.39 0.18 259;
+    --primary-foreground: 0.99 0 0;
+    --secondary: 0.97 0.01 253;
+    --secondary-foreground: 0.39 0.18 259;
+    --muted: 0.97 0.01 253;
+    --muted-foreground: 0.52 0.01 255;
+    --accent: 0.67 0.18 51;
+    --accent-foreground: 0.99 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.91 0.01 258;
+    --input: 0.91 0.01 258;
+    --ring: 0.39 0.18 259;
+    --chart-1: 0.39 0.18 259;
+    --chart-2: 0.69 0.16 164;
+    --chart-3: 0.67 0.18 51;
+    --chart-4: 0.628 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.39 0.18 259;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0.01 253;
+    --sidebar-accent-foreground: 0.39 0.18 259;
+    --sidebar-border: 0.91 0.01 258;
+    --sidebar-ring: 0.39 0.18 259;
+  }
+
+  .dark {
+    --background: 0.13 0.01 260;
+    --foreground: 0.97 0 0;
+    --card: 0.18 0.01 260;
+    --card-foreground: 0.97 0 0;
+    --popover: 0.22 0.01 260;
+    --popover-foreground: 0.97 0 0;
+    --primary: 0.55 0.18 259;
+    --primary-foreground: 0.99 0 0;
+    --secondary: 0.22 0.01 260;
+    --secondary-foreground: 0.97 0 0;
+    --muted: 0.22 0.01 260;
+    --muted-foreground: 0.65 0.01 255;
+    --accent: 0.67 0.18 51;
+    --accent-foreground: 0.99 0 0;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.985 0 0;
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.55 0.18 259;
+    --chart-1: 0.55 0.18 259;
+    --chart-2: 0.69 0.16 164;
+    --chart-3: 0.67 0.18 51;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+    --sidebar: 0.18 0.01 260;
+    --sidebar-foreground: 0.97 0 0;
+    --sidebar-primary: 0.55 0.18 259;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.22 0.01 260;
+    --sidebar-accent-foreground: 0.97 0 0;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.55 0.18 259;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.39 0.18 259) 0%,
+      oklch(0.45 0.17 210) 50%,
+      oklch(0.69 0.16 164) 100%
+    );
+  }
+
+  .quote-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.39 0.18 259) 0%,
+      oklch(0.42 0.2 290) 50%,
+      oklch(0.67 0.18 51) 100%
+    );
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .subject-physics {
+    background: oklch(0.93 0.05 259);
+    color: oklch(0.39 0.18 259);
+  }
+
+  .subject-chemistry {
+    background: oklch(0.93 0.05 145);
+    color: oklch(0.45 0.15 145);
+  }
+
+  .subject-maths {
+    background: oklch(0.93 0.08 51);
+    color: oklch(0.55 0.18 51);
+  }
+
+  .subject-biology {
+    background: oklch(0.93 0.07 164);
+    color: oklch(0.5 0.16 164);
+  }
+
+  .dark .subject-physics {
+    background: oklch(0.28 0.07 259);
+    color: oklch(0.75 0.15 259);
+  }
+
+  .dark .subject-chemistry {
+    background: oklch(0.28 0.05 145);
+    color: oklch(0.75 0.15 145);
+  }
+
+  .dark .subject-maths {
+    background: oklch(0.28 0.06 51);
+    color: oklch(0.8 0.15 51);
+  }
+
+  .dark .subject-biology {
+    background: oklch(0.28 0.06 164);
+    color: oklch(0.75 0.15 164);
+  }
+}
